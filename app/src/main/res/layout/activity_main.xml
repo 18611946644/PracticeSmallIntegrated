@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bwie.lx_yuekao.shoppingpage.view.MainActivity"
+    android:orientation="vertical"
+    >
+
+    //主方法 布局
+    <RelativeLayout
+        android:id="@+id/rv_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/xlv_shop"
+        android:layout_marginBottom="10dp"
+        android:background="#f00"
+        >
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/leftjiantou"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/img_qiehuan"
+            android:layout_toRightOf="@+id/img_back"
+            android:background="@drawable/bg_search"
+            app:queryHint="请输入搜索内容"
+            app:iconifiedByDefault="false"
+            >
+
+        </android.support.v7.widget.SearchView>
+
+        <ImageView
+            android:id="@+id/img_qiehuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kind_liner"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        >
+        <Button
+            android:id="@+id/btn_map"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_alignParentBottom="true"
+            android:layout_height="50dp"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:alpha="0.5"
+            android:text="定位用户的位置信息"
+            />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="搜索"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:background="#f00"
+            android:layout_marginLeft="5dp"
+            />
+
+    </LinearLayout>
+
+    //数据展示
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/xlv_shop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rv_top"
+        android:layout_above="@+id/btn_map"
+        ></com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+    //搜索数据展示  开始隐藏
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/xlv_searchkey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/xlv_shop"
+        android:visibility="gone"
+        ></com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+</LinearLayout>
